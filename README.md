@@ -1,6 +1,6 @@
 # Predikce uzavření termínovaného vkladu
 
-**TODO: před každým commitem jupyternootebooku dát clear all output**
+**TODO: před každým commitem jupyternootebooku dát clear all output, aby se nemusely dělat pull requesty**
 
  Seminární práce vychází z datasetu: [Bank Marketing Data Set - Kaggle](https://www.kaggle.com/datasets/alexkataev/bank-marketing-data-set) Cílem je pomocí 20 proměnných zjistit, zda klient banky (Portuguese banking institution) po marketingové kampani uzavřel termínovaný vklad či nikoliv. Cílovou proměnnou je "y" která má dvě hodnoty: "yes" (klient uzavřel termínovaný vklad) a "no" (klient neuzavřel).
 
