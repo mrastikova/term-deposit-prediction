@@ -43,3 +43,24 @@ a jednu cílovou proměnnou "y", která určuje, zda klient sjednal termínovan�
 
 **Cílová proměnná**
 - **y (Subscription)**:  Binární proměnná indikující, zda klient podepsal termínovaný vklad (ano/ne).
+
+
+## PŘEDZPRACOVÁNÍ DAT
+- Ošetření chybějícíh hodnot: Nejprve jsou chybějící hodnoty 'unknown' nahrazeny hodnotami NA. Poté tyto hodnoty nahrazujeme módem
+- Vytvoření nové proměnné 'age_group', který vzniká rozdělením sloupce 'age' do intervalů
+- Vytvoření nové proměnné 'year'
+- Vytvoření nových intervalů pro proměnné "previous" a "campaign"
+- Odstranění nepotřebných sloupců: "pdays", "duration", "nr.employed","poutcome","contact", "age"
+- Standardizace numerických sloupců: 'emp.var.rate', 'cons.price.idx', 'cons.conf.idx', 'euribor3m'
+- Převod proměnných na číselné hodnoty
+- Vytvoření kopie předzpracovaného datasetu a uložení jako data_cleaned.csv
+- Rozdělení dat na testovací a trénovací v poměru 20/80
+
+## MODELOVÁNÍ
+
+
+## LADĚNÍ HYPERPARAMETRŮ
+
+## EVALUACE MODELŮ
+
+
