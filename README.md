@@ -78,8 +78,8 @@ U **náhodného lesa** jsme ladily parametry jako criterion, max_depth, a min_sa
 ## EVALUACE MODELŮ
 Evaluace byla provedena na základě klíčových metrik, jako je přesnost, precision, recall a F1-score, a dále jsme vše hodnotily na základě matice záměn a a logistickou regresi i na zkladě ROC křivky.
 
-- **Logistická regrese** v původním modelu dosáhla přesnosti 81 % a model správně rozpoznal 62 % klientů, kteří uzavřeli vklad. Model s křížovou validací měl oproti původnímu měnší přesnost - 74 %,  ale zato dokázal rozpoznat více klientů - 67 %, kteří uzavřeli vklad. 
-  ROC křivka ukázala, že oba modely překonávají náhodný klasifikátor, přičemž manuálně laděná logistická regrese mírně překonala model optimalizovaný křížovou validací.
+- **Logistická regrese** v původním modelu dosáhla přesnosti 81 % a model správně rozpoznal 62 % klientů, kteří uzavřeli vklad. Model s křížovou validací měl oproti původnímu měnší přesnost - 74 %,  ale zato dokázal rozpoznat více klientů - 67 %, kteří uzavřeli vklad. \
+ROC křivka ukázala, že oba modely překonávají náhodný klasifikátor, přičemž manuálně laděná logistická regrese mírně překonala model optimalizovaný křížovou validací.
 - **Rozhodovací strom** a strom s laděnými hyperparametry dosáhly téměř totožnách výsledků. Přesnost modelů byla 83 % a správně identifikují 58% klientů, kteří uzavřou vklad.
 - **Náhodný les** dosáhl nejlepších výsledků v porovnání se všemi modely. Přesnost modelů je 83 % a správně identifikují 60 % zákazníků, kteří uzavřou vklad. 
 
