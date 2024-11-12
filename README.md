@@ -66,7 +66,7 @@ Pro každý model jsme použily jak základní trénování, tak i křížovou v
 
 1. **Logistická regrese:** Model byl trénován s maximálním počtem iterací 10 000 a také jsme využily křížovou validaci s těmito parametry: cv = 5 a Cs= 1.
 2. **Rozhodovací strom:** Tento model byl trénován s hloubkou stromu 3. Po optimalizaci hyperparametrů jsme získali nejlepší model pomocí GridSearchCV s těmito parametry: max_depth= 4 a min_samples_leaf=2. V obou případech jsme rozkodovací stromy vizualizovaly. 
-3. **Random forest:** Vytvořily jsme model s 100 estimátory a maximální hloubkou stromů 5. Po ladění hyperparametrů pomocí GridSearchCv jsme získaly nejlepší model s těmito parametry: criterion= 'gini', max_depth= 5, min_samples_leaf=5.
+3. **Random forest:** Vytvořily jsme model s 100 estimátory a maximální hloubkou stromů 5. Po ladění hyperparametrů pomocí GridSearchCv jsme získaly nejlepší model s těmito parametry: max_depth= 5, min_samples_leaf=2.
 
 ## LADĚNÍ HYPERPARAMETRŮ
 Hyperparametry byly laděny zejména u modelů Rozhodovacího stromu a Random forest pomocí GridSearchCV.
