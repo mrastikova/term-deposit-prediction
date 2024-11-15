@@ -1,6 +1,5 @@
 # Predikce uzavření termínovaného vkladu
 
-**TODO: před každým commitem jupyternootebooku dát clear all output, aby se nemusely dělat pull requesty**
 
  Seminární práce vychází z datasetu: [Bank Marketing Data Set - Kaggle](https://www.kaggle.com/datasets/alexkataev/bank-marketing-data-set) Cílem je pomocí 20 proměnných zjistit, zda klient banky (Portuguese banking institution) po marketingové kampani uzavřel termínovaný vklad či nikoliv. Cílovou proměnnou je "y" která má dvě hodnoty: "yes" (klient uzavřel termínovaný vklad) a "no" (klient neuzavřel).
 
@@ -46,15 +45,19 @@ a jednu cílovou proměnnou "y", která určuje, zda klient sjednal termínovan�
 
 
 ## PŘEDZPRACOVÁNÍ DAT
-- Ošetření chybějícíh hodnot: Nejprve jsou chybějící hodnoty 'unknown' nahrazeny hodnotami NA. Poté tyto hodnoty nahrazujeme módem
+- Označení chybějícíh hodnot: Chybějící hodnoty 'unknown' nahrazeny hodnotami NA
 - Vytvoření nové proměnné 'age_group', který vzniká rozdělením sloupce 'age' do intervalů
 - Vytvoření nové proměnné 'year'
 - Vytvoření nových intervalů pro proměnné "previous" a "campaign"
 - Odstranění nepotřebných sloupců: "pdays", "duration", "nr.employed","poutcome","contact", "age"
 - Standardizace numerických sloupců: 'emp.var.rate', 'cons.price.idx', 'cons.conf.idx', 'euribor3m'
-- Převod proměnných na číselné hodnoty
 - Vytvoření kopie předzpracovaného datasetu a uložení jako data_cleaned.csv
+- Oddělení atributů - features a cílové proměnné - targer
+- Vytvoření proměnných feature_cols a odstranění cílové proměnné 'y', aby zůstaly pouze proměnné, které se budou používat jako vstupy do modelu
 - Rozdělení dat na testovací a trénovací v poměru 20/80
+- Ošetření chybějících hodnot. Chybějící hodnoty označené NA jsme nahradili módem
+- Převod proměnných typu object nebo category na číselné hodnoty 0 = no, 1 = yes a kategorizace
+- Vyrovnání tříd pomocí over_sampler
 
 ## MODELOVÁNÍ
 V této části jsme trénovaly tři různé modely: 
@@ -69,14 +72,14 @@ Pro každý model jsme použily jak základní trénování, tak i křížovou v
 3. **Random forest:** Vytvořily jsme model s 100 estimátory a maximální hloubkou stromů 5. Po ladění hyperparametrů pomocí GridSearchCv jsme získaly nejlepší model s těmito parametry: max_depth= 5, min_samples_leaf=2.
 
 ## LADĚNÍ HYPERPARAMETRŮ
-Hyperparametry byly laděny zejména u modelů Rozhodovacího stromu a Random forest pomocí GridSearchCV.
+Hyperparametry byly laděny zejména u modelů Rozhodovacího stromu a Random forest pomocí GridSearchCV. Model logisticé regrese jsme provedly znovu s kří
 
 U **rozhodovacího stromu** jsme ladily parametry jako max_depth, min_samples_leaf, a criterion. Nejlepším modelem byl strom s hloubkou 4, kritériem entropy a min_samples_leaf=4.
 
-U **Random forest** jsme ladily parametry jako criterion, max_depth, a min_samples_leaf. Nejlepším modelem byl ten s kritériem gini, hloubkou 5 a min_samples_leaf=2.
+U **Random forest** jsme ladily parametry jako criterion, max_depth, a min_samples_leaf. Nejlepším modelem byl ten s kritériem entropy, hloubkou 5 a min_samples_leaf=2.
 
 ## EVALUACE MODELŮ
-Evaluace byla provedena na základě klíčových metrik, jako je přesnost, precision, recall a F1-score, a dále jsme vše hodnotily na základě matice záměn a a logistickou regresi i na zkladě ROC křivky.
+Evaluace byla provedena na základě klíčových metrik, jako je přesnost, precision, recall a F1-score, a dále jsme vše hodnotily na základě matice záměn a logistickou regresi i na zkladě ROC křivky.
 
 - **Logistická regrese** v původním modelu dosáhla přesnosti 74 % a model správně rozpoznal 69 % klientů, kteří uzavřeli vklad. Model s křížovou validací měl oproti původnímu zanedbatelně měnší přesnost - 73 % a správně rozpoznal 70 % klientů, kteří uzavřeli vklad. \
 ROC křivka ukázala, že oba modely překonávají náhodný klasifikátor, přičemž manuálně laděná logistická regrese mírně překonala model optimalizovaný křížovou validací.
