@@ -57,6 +57,7 @@ a jednu cílovou proměnnou "y", která určuje, zda klient sjednal termínovan�
 - Rozdělení dat na testovací a trénovací v poměru 20/80
 - Ošetření chybějících hodnot. Chybějící hodnoty označené NA jsme nahradili módem
 - Převod proměnných typu object nebo category na číselné hodnoty 0 = no, 1 = yes a kategorizace
+- Převedení y_train a y_test pro binární hodnoty
 - Vyrovnání tříd pomocí over_sampler
 
 ## MODELOVÁNÍ
