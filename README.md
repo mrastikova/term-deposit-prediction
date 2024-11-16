@@ -1,5 +1,6 @@
 # Predikce uzavření termínovaného vkladu
  Seminární práce vychází z datasetu: [Bank Marketing Data Set - Kaggle](https://www.kaggle.com/datasets/alexkataev/bank-marketing-data-set) Cílem je pomocí 20 proměnných zjistit, zda klient banky (Portuguese banking institution) po marketingové kampani uzavřel termínovaný vklad či nikoliv. Cílovou proměnnou je "y" která má dvě hodnoty: "yes" (klient uzavřel termínovaný vklad) a "no" (klient neuzavřel).
+ Náš projekt je možné vidět jako HTML stránku [zde](https://rawcdn.githack.com/mrastikova/term-deposit-prediction/7b82010c37aef01892e851dc2b8f2e532719de9a/Bankovnidata.html). 
 
 ## DATA 
 Zdroj datasetu: https://archive.ics.uci.edu/ml/datasets/bank+marketing
